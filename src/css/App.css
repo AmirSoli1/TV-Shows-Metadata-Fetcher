@@ -1,0 +1,97 @@
+/* General Styles */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Input Styles */
+input {
+  margin: 10px 5px;
+  padding: 10px;
+  width: calc(100% - 22px);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type='button'] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type='button']:hover {
+  background-color: #0056b3;
+}
+
+button[type='submit'] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type='submit']:hover {
+  background-color: #218838;
+}
+
+button[type='reset'] {
+  background-color: #dc3545;
+  color: white;
+}
+
+button[type='reset']:hover {
+  background-color: #c82333;
+}
+
+/* Results Styles */
+.results {
+  margin-top: 20px;
+}
+
+.metadata {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.metadata img {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.error p {
+  margin: 0;
+}
