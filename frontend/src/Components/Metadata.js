@@ -10,11 +10,9 @@ export default function Metadata({ metadata }) {
           <h2>Metadata Results:</h2>
           {metadata.map((data, index) => (
             <div key={index} className="metadata">
-              <h3>{data.name}</h3>
-              <p>{stripHtmlTags(data.summary)}</p>
-              {data.image.medium && (
-                <img src={data.image.medium} alt="metadata" />
-              )}
+              <h3>{data.title}</h3>
+              <p>{stripHtmlTags(data.description)}</p>
+              {data.image && <img src={data.image} alt="metadata" />}
             </div>
           ))}
         </div>

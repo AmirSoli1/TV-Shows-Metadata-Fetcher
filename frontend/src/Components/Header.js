@@ -13,24 +13,25 @@ export default function Header({ setMetadata, setErrors }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const fetchMetadata = async (url, index) => {
-      try {
-        if (!url) {
-          return { error: `URL ${index + 1} is empty` };
-        }
-        const response = await axios.get(url);
-        return response.data;
-      } catch (error) {
-        return { error: `Failed to fetch metadata for URL ${index + 1}` };
-      }
-    };
+    // const fetchMetadata = async (url, index) => {
+    //   try {
+    //     if (!url) {
+    //       return { error: `URL ${index + 1} is empty` };
+    //     }
+    //     const response = await axios.get(url);
+    //     return response.data;
+    //   } catch (error) {
+    //     return { error: `Failed to fetch metadata for URL ${index + 1}` };
+    //   }
+    // };
 
-    const results = await Promise.all(
-      urls.map((url, index) => fetchMetadata(url, index))
+    const response = await axios.post(
+      "http://localhost:3001/fetch-metadata",
+      urls
     );
-    console.log(results);
-    setMetadata(results.filter((result) => !result.error));
-    setErrors(results.filter((result) => result.error));
+
+    setMetadata(response.data.filter((result) => !result.error));
+    setErrors(response.data.filter((result) => result.error));
   };
 
   return (
