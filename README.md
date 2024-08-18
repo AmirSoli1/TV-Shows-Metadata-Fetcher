@@ -16,7 +16,7 @@ TV Shows Metadata Fetcher is a simple application that provides an endpoint to f
 2. **Install dependencies**:
 
    ```bash
-   1.`npm install`  from the  `frontend`  dir and  `backend`  dir
+   1.`npm install` from the `frontend` dir and `backend`  dir
    ```
 
 3. **Run the backend**:
