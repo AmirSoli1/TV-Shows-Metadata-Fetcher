@@ -1,10 +1,28 @@
 const express = require("express");
-const app = express();
-const { StatusCodes } = require("http-status-codes");
 const axios = require("axios");
-
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
 const cors = require("cors");
+const { StatusCodes } = require("http-status-codes");
+
+const app = express();
+
 app.use(cors());
+
+const limiter = rateLimit({
+  windowMs: 1000,
+  max: 5,
+  message: "Too many requests from this IP, please try again later.",
+});
+
+// security middlewares
+app.use(limiter);
+app.use(helmet());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+  })
+);
 
 app.use(express.json());
 

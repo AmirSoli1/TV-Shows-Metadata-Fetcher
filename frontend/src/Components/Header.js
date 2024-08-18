@@ -13,18 +13,6 @@ export default function Header({ setMetadata, setErrors }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const fetchMetadata = async (url, index) => {
-    //   try {
-    //     if (!url) {
-    //       return { error: `URL ${index + 1} is empty` };
-    //     }
-    //     const response = await axios.get(url);
-    //     return response.data;
-    //   } catch (error) {
-    //     return { error: `Failed to fetch metadata for URL ${index + 1}` };
-    //   }
-    // };
-
     const response = await axios.post(
       "http://localhost:3001/fetch-metadata",
       urls
@@ -37,6 +25,15 @@ export default function Header({ setMetadata, setErrors }) {
   return (
     <header>
       <h1>TV Shows Metadata Fetcher</h1>
+      <p>
+        <b>
+          Please Enter the URLs of your favourite TV shows in the following
+          format:
+        </b>
+        <br />
+        https://api.tvmaze.com/singlesearch/shows?q=[TV_SHOW_NAME]
+      </p>
+      <p>(For example: https://api.tvmaze.com/singlesearch/shows?q=lost)</p>
       <form onSubmit={(e) => handleSubmit(e)}>
         {urls.map((url, index) => (
           <div key={index}>
