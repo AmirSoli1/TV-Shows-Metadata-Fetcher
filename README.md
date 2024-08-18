@@ -16,17 +16,25 @@ TV Shows Metadata Fetcher is a simple application that provides an endpoint to f
 2. **Install dependencies**:
 
    ```bash
-   1.`npm install` from the `frontend` dir and `backend`  dir
+   1.`npm install`  from the  `frontend`  dir and  `backend`  dir
    ```
 
 3. **Run the backend**:
+
    ```bash
    `node index.js` from the `backend` dir
    ```
+
 4. **Run the frontend**:
 
    ```bash
    `npm start` from the `frontend` dir
+   ```
+
+5. **(OPTIONAL) Testing**:
+
+   ```bash
+   `npx playwright test` from the `frontend` dir
    ```
 
    The application will run on `http://localhost:3000`.

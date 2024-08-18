@@ -13,13 +13,16 @@ export default function Header({ setMetadata, setErrors }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post(
-      "http://localhost:3001/fetch-metadata",
-      urls
-    );
-
-    setMetadata(response.data.filter((result) => !result.error));
-    setErrors(response.data.filter((result) => result.error));
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/fetch-metadata",
+        urls
+      );
+      setMetadata(response.data.filter((result) => !result.error));
+      setErrors(response.data.filter((result) => result.error));
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
