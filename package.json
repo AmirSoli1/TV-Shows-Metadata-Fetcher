@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node server.js && react-scripts build",
     "test": "npx playwright test",
     "eject": "react-scripts eject"
   },
